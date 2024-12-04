@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Cámara</title>
+</head>
+<body>
+    <header>
+        <h1>Jugando con la cámara</h1>
+    </header>
+
+    <section class="cam-container">
+        <!-- Contenedor del video -->
+        <div class="video-wrap">
+            <video class="video" autoplay></video>
+        </div>
+
+        <!-- Lienzo para dibujar la foto tomada -->
+        <div class="canvas-wrap">
+            <canvas class="canvas" width="420" height="340"></canvas>
+        </div>
+
+        <!-- Contenedor para mostrar la imagen tomada -->
+        <div>
+            <img src="" alt="Foto tomada" class="photo">
+        </div>
+
+        <!-- Botón para tomar la foto -->
+        <div>
+            <button class="start-btn">Tomar Foto</button>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
