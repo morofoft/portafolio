@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora</title>
+	<!-- Importar fuentes de Google -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>CALCULADORA</h1>
+			<p>Calculadora de dos números ingresados</p>
+		</header>
+
+		<main>
+			<div class="calculadora">
+				<input type="number" id="num1" placeholder="Primer número">
+				<input type="number" id="num2" placeholder="Segundo número">
+
+				<div class="operaciones">
+					<button class="Operacion" onclick="calcular('+')">+</button>
+					<button class="Operacion" onclick="calcular('-')">-</button>
+					<button class="Operacion" onclick="calcular('*')"></button>
+					<button class="Operacion" onclick="calcular('/')">/</button>
+				</div>
+				<h3 class="error" id="resultado"></h3>
+			</div>
+		</main>
+
+		<footer>
+			<p>&copy; Pedro Garcia 2025</p>
+		</footer>
+	</div>
+
+	<script>
+		// Toast básico que se autocierra después de 3 segundos
+		Toastify({
+			text: "Esta notificación se cerrará automáticamente",
+			duration: 3000,
+			close: true,
+			gravity: "top", // "top" o "bottom"
+			position: "right", // "left", "center" o "right"
+			backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+			stopOnFocus: true // Detiene el autocierre al pasar el mouse
+		}).showToast();
+
+
+		function calcular(op) {
+			let n1 = parseFloat(document.getElementById("num1").value);
+			let n2 = parseFloat(document.getElementById("num2").value);
+
+			if (isNaN(n1)) {
+				Swal.fire({
+					title: 'Campo vacío',
+					text: 'Por favor ingresa el primer número',
+					icon: 'warning',
+					confirmButtonText: 'Entendido'
+				});
+				return;
+			}
+
+			if (isNaN(n2)) {
+				Swal.fire({
+					title: 'Campo vacío',
+					text: 'Por favor ingresa el segundo número',
+					icon: 'warning',
+					confirmButtonText: 'Entendido'
+				});
+				return;
+			}
+
+			let res;
+			switch (op) {
+				case "+": res = n1 + n2; break;
+				case "-": res = n1 - n2; break;
+				case "*": res = n1 * n2; break;
+				case "/":
+					if (n2 === 0) {
+						Swal.fire({
+							title: 'Error matemático',
+							text: 'No se puede dividir por cero',
+							icon: 'error',
+							confirmButtonText: 'Entendido'
+						});
+						return;
+					}
+					res = n1 / n2;
+					break;
+				default: res = "Operación no válida";
+			}
+
+			document.getElementById("resultado").textContent = `Resultado: ${res}`;
+
+			// Toast de éxito (ver siguiente sección)
+			mostrarToast(`Operación ${op} realizada con éxito`);
+		}
+	</script>
+</body>
+
+</html>

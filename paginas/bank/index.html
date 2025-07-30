@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Control de Banco Monopoly</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Monopoly Bank!</h1>
+        </header>
+        <main>
+            <section class="reg-user">
+                <button onclick="registrarJugador()">Registrar Jugador</button>
+            </section>
+            <section class="trans">
+                <article class="deudas">
+                    <h2>Deudas</h2>
+                    <select id="jugadorSelect"></select>
+                    <input type="number" id="montoPrestamo" placeholder="Monto a prestar">
+                    <button onclick="prestarDinero()">Prestar Dinero</button>        
+                </article>
+                <article class="abono">
+                    <h2>Abonos</h2>
+                    <select id="jugadorAbonoSelect"></select>
+                    <input type="number" id="montoAbono" placeholder="Monto a abonar">
+                    <button onclick="agregarAbono()">Agregar Abono</button>
+                </article>
+            </section>
+            <section class="listaHistorial">
+                <h2>Historial</h2>
+                <select id="jugadorHistorialSelect"></select>
+                <ul id="listaHistorial"></ul>
+            </section>
+            <section class="listaDeudas">
+                <ul id="listaDeudas"></ul>
+            </section>
+            <section class="btn-limpiar">
+                <button onclick="limpiarTodo()">Limpiar Todos los Datos</button>
+            </section>
+        </main>        
+        <footer>
+            <p>&copy; 2025. Pedro Garcia. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

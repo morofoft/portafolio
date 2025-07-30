@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduce tus datos Personales</title>
+</head>
+<body>
+	<h2>Introduce tus Datos</h2>
+	<input type="text" id="nombre" placeholder="Nombre">
+	<input type="text" id="apellido" placeholder="Apellido">
+	<input type="number" id="edad" placeholder="Edad">
+	<button onclick="mostrarDatos()">Mostrar</button>
+	<p id="info"></p>
+	
+	<script>
+		function mostrarDatos(){
+			let nombre = document.getElementById("nombre").value;
+			let apellido = document.getElementById("apellido").value;
+			let edad = document.getElementById("edad").value;
+			
+			let mensaje = "Hola soy " + nombre + " " + apellido + ". tengo " + edad + " años. ";
+			document.getElementById("info").innerText = mensaje;
+		
+		}
+	</script>
+
+</body>
+</html>

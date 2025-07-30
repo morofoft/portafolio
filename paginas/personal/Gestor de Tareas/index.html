@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Gestor de Tareas</h1>
+            <p>Organiza tus tareas por prioridad</p>
+        </header>
+
+        <div class="app-container">
+            <div class="task-form">
+                <h2>Agregar Nueva Tarea</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskTitle">Título:</label>
+                        <input type="text" id="taskTitle" placeholder="Descripción de la tarea" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskPriority">Prioridad:</label>
+                        <select id="taskPriority" required>
+                            <option value="">Seleccione prioridad</option>
+                            <option value="alta">Alta</option>
+                            <option value="media">Media</option>
+                            <option value="baja">Baja</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDueDate">Fecha Límite:</label>
+                        <input type="date" id="taskDueDate">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Agregar Tarea
+                    </button>
+                </form>
+            </div>
+
+            <div class="task-filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="alta">Alta Prioridad</button>
+                <button class="filter-btn" data-filter="media">Media Prioridad</button>
+                <button class="filter-btn" data-filter="baja">Baja Prioridad</button>
+            </div>
+
+            <div class="task-list">
+                <h2>Lista de Tareas</h2>
+                <div id="tasksContainer">
+                    <!-- Las tareas se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

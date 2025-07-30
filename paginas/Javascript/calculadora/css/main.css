@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #b4c9eb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    text-align: center;
+    color: #333;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.calculadora {
+    background: #ffffff;
+    border: 1px solid #000;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+input {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.operaciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.Operacion {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.Operacion:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.Operacion:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#resultado {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    border: 1px solid #e0e0e0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+#resultado.error {
+    color: rgb(170, 20, 20);
+}
+
+footer {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+/* Estilo especial para el botón de multiplicación */
+.Operacion[onclick*="'*'"] {
+    position: relative;
+}
+
+.Operacion[onclick*="'*'"]::after {
+    content: "×";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}

@@ -1,0 +1,43 @@
+SIGEN					
+Sistema de Gestión Estudiantil y Notas					
+Un sistema estudiantil de gestión de notas debe ser una herramienta integral que facilite la administración académica, tanto para docentes como para estudiantes y administradores. Aquí te detallo las características y funciones esenciales que debería tener:					
+					
+1.0	    Gestión de Usuarios y Roles
+1.1	    Roles diferenciados:
+1.1.1	Administradores (gestión global del sistema).
+1.1.2	Docentes (registro de notas, asistencia, planificación).
+1.1.3	Estudiantes (consulta de notas, horarios).
+1.1.4	Padres/Tutores (acceso a información de sus hijos).
+
+1.2	    Autenticación segura: 
+1.2.1   Login con usuario/contraseña y opción de recuperación.
+
+2.0	    Registro Académico
+2.1.0.0	Matrícula de estudiantes: Inscripción por cursos/grados.
+2.2.0.0	Historial académico: Registro de notas históricas por asignatura.
+2.3.0.0	Ficha del estudiante: Datos personales, contacto, información médica (opcional).
+3.0.0.0	Gestión de Calificaciones
+3.1.0.0	Registro de notas:
+3.1.1.0	Por parciales, quimestres, trimestres, etc. (según el sistema educativo).
+3.1.2.0	Cálculo automático de promedios (ponderaciones configurables).
+3.1.3.0	Escalas personalizables: Diferentes sistemas de evaluación (numérico, letras, porcentajes).
+3.1.4.0	Reportes de rendimiento: Gráficos o tablas comparativas.
+4.0.0.0	Asistencia y Disciplina
+4.1.0.0	Control de asistencia: Registro de faltas, justificaciones.
+4.2.0.0	Reportes de inasistencia: Alertas para padres/administradores.
+5.0.0.0	Comunicación
+5.1.0.0	Notificaciones:
+5.1.1.0	Alertas por bajas notas o inasistencias (email/app).
+5.1.2.0	Mensajería interna entre docentes, estudiantes y padres.
+5.2.0.0	Panel de anuncios: Información relevante (eventos, fechas de exámenes).
+6.0.0.0	Horarios y Planificación
+6.0.1.0	Generación de horarios: Para clases, exámenes o actividades extracurriculares.
+6.0.2.0	Calendario académico: Fechas clave (vacaciones, entregas de notas).
+7.0.0.0	Reportes y Analytics
+7.1.0.0	Reportes personalizados:
+7.1.1.0	Por estudiante, curso o asignatura.
+7.1.2.0	Estadísticas de rendimiento (ej: porcentaje de aprobados).
+7.2.0.0	Exportación de datos: A formatos como PDF, Excel o CSV.
+			
+					
+					

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Captura de Estudiantes</title>
+	<style>
+	
+	</style>
+	
+</head>
+<body>
+	<h1>Captura de Estudiantes</h1>
+	
+	<label for="nombre">Nombre</label>
+	<input type="text" id="nombre" placeholder="Nombre"><br>
+	<label for="apellido">Apellido</label>
+	<input type="text" id="apellido" placeholder="Apellido"><br>
+	<label for="sexo">Sexo</label>
+	<input type="text" id="sexo" placeholder="Genero"><br>
+	
+	<h2>Captura de Notas</h2>
+	
+	<label for="Nota">Nota 1:</label>
+	<input type="number" id="nota1" min="0" max="100"><br>
+	<label for="Nota">Nota 2:</label>
+	<input type="number" id="nota2" min="0" max="100"><br>
+	<label for="Nota">Nota 3:</label>
+	<input type="number" id="nota3" min="0" max="100"><br>
+	<label for="Nota">Nota 4:</label>
+	<input type="number" id="nota4" min="0" max="100"><br><br>
+	
+	
+	<button onclick="calcular()">Calcular Promedio</button><br><br>
+	
+	<div id="resultado"></div>
+	
+	<script>
+	
+		//Obtener Datos del Estudiante
+		
+		
+		
+		//Obtener las notas
+		function calcular(){
+		
+		let n1 = parseFloat(document.getElementById("nota1").value);
+		let n2 = parseFloat(document.getElementById("nota2").value);
+		let n3 = parseFloat(document.getElementById("nota3").value);
+		let n4 = parseFloat(document.getElementById("nota4").value);
+		
+		//Calcular el Promedio
+		let promedio = (n1 + n2 + n3 + n4) / 4;
+		
+		//Determinar el resultado
+		let resultado = document.getElementById('resultado');
+		resultado.innerHTML = "Promedio : " + promedio.toFixed(1);
+		
+		if(promedio >= 70){
+			resultado.innerHTML += "<br>APROBADO";
+			resultado.className = "APROBADO";
+		}else{
+			resultado.innerHTML += "<br>REPROBADO";
+			resultado.className = "REPROBADO"
+		
+		}
+			
+	}
+	
+	</script>
+	</body>
+</html>

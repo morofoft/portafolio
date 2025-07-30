@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header, footer {
+    background: #007bff;
+    color: #ffffff;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    /* color: #3c3c3c; */
+    font-size: 1.5em;
+    width: 100vw;
+}
+.container {
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main {
+    padding: 20px;
+}
+@media (max-width: 575.98px) {
+    .container {
+        font-size: 16px;
+        grid-template-rows: 50px 1fr 50px;
+    }
+    main {
+        padding: 10px;
+    }
+    header, footer {
+        background: #007bff;
+        color: #ffffff;
+        height: 50px;
+    }
+    h1 {
+        /* color: #3c3c3c; */
+        font-size: 1em;
+    }
+}
+/*
+.container
+    header
+        h1
+    main
+        section.reg-user
+            button
+        section.trans
+            article.deudas
+                h2
+                select#jugadorSelect
+                input#montoPrestamo
+                button      
+            article.abono
+                h2
+                select#jugadorAbonoSelect
+                input#montoAbono
+                button
+        section.listaHistorial
+            h2
+            select#jugadorHistorialSelect
+            ul#listaHistorial
+                li
+        section.listaDeudas
+            ul#listaDeudas
+                li
+        section.btn-limpiar
+            button       
+    footer
+        p
+ */
+
+h2 {
+    color: #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#listaDeudas,
+#listaHistorial {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#listaDeudas::-webkit-scrollbar,
+#listaHistorial::-webkit-scrollbar {
+    width: 8px;
+}
+
+#listaDeudas::-webkit-scrollbar-thumb,
+#listaHistorial::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
+
+#listaDeudas::-webkit-scrollbar-thumb:hover,
+#listaHistorial::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

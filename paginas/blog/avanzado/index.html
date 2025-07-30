@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Avanzado</title>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="img/logo.jpeg" alt="Logo del blog">
+            <h1>Mat Blog</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="posts">
+                <article class="post">
+                    <img src="img/banner.jpg" alt="Imagen del post 1" class="post-image">
+                    <h2 class="post-title">Título del primer artículo</h2>
+                    <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui
+                        mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                </article>
+
+                <article class="post">
+                    <img src="img/logo.jpeg" alt="Imagen del post 2" class="post-image">
+                    <h2 class="post-title">Título del segundo artículo</h2>
+                    <p class="post-excerpt">Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla
+                        enim. Phasellus molestie magna non est bibendum.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                </article>
+
+                <article class="post">
+                    <img src="img/banner.jpg" alt="Imagen del post 3" class="post-image">
+                    <h2 class="post-title">Título del tercer artículo</h2>
+                    <p class="post-excerpt">Suspendisse in orci enim. Vivamus hendrerit arcu sed erat molestie vehicula.
+                        Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                </article>
+            </section>
+
+            <aside class="sidebar">
+                <h3>Categorías</h3>
+                <ul class="categories">
+                    <li><a href="#">Tecnología</a></li>
+                    <li><a href="#">Viajes</a></li>
+                    <li><a href="#">Cocina</a></li>
+                    <li><a href="#">Deportes</a></li>
+                    <li><a href="#">Música</a></li>
+                </ul>
+
+                <div class="post-form">
+                    <h3>Añadir Nueva Entrada</h3>
+                    <form id="blogForm">
+                        <input type="text" id="postTitle" placeholder="Título del post">
+                        <textarea id="postContent" placeholder="Escribe tu contenido aquí..."></textarea>
+                        <button type="submit">Publicar</button>
+                    </form>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Pedro Enrique García Ramírez. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
