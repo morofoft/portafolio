@@ -1,17 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
   // ========== MENÚ HAMBURGUESA ==========
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const menu = document.querySelector('nav ul');
   
-  menuToggle.addEventListener('click', function() {
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', !isExpanded);
+  // Función para alternar el menú
+  function toggleMenu() {
     nav.classList.toggle('active');
-    this.innerHTML = isExpanded 
-      ? '<i class="fas fa-bars"></i>' 
-      : '<i class="fas fa-times"></i>';
+    const icon = menuToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  }
+    // Evento para el botón hamburguesa
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation(); // Evitar que el click se propague al documento
+    toggleMenu();
   });
-
+  
+  // Cerrar al hacer click fuera
+  document.addEventListener('click', function(e) {
+    const isClickInsideMenu = menu.contains(e.target) || menuToggle.contains(e.target);
+    
+    if (!isClickInsideMenu && nav.classList.contains('active')) {
+      toggleMenu();
+    }
+  });
+  
+  // Cerrar al hacer click en enlaces del menú
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
   // ========== FILTRADO DE PROYECTOS ==========
   const filterButtons = document.querySelectorAll('.modBtns button');
   const projects = document.querySelectorAll('.proyecto');
